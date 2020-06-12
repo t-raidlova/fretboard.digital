@@ -1,3 +1,13 @@
+:root {
+    --fretboard-height: 350;
+    --number-of-strings: 6;
+    --string-height: 8;
+    --half-string-height: calc(var(--string-height) / 2 );
+    --string-top-position: calc(var(--fretboard-height) / var(--number-of-strings) / 2 - var(--half-string-height));
+    --double-fretmark-position-1: calc(var(--fretboard-height) * 0.25 );
+    --double-fretmark-position-2: calc(var(--fretboard-height) * 0.75 );
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -21,7 +31,8 @@ justify-content: center;
     flex-direction: column;
     background: #333;
     width: 100%;
-    height: 300px;
+    min-width: 1500px;
+    height: calc(var(--fretboard-height) * 1px)
 }
 
 .string {
@@ -34,12 +45,12 @@ justify-content: center;
 .string:before {
     content: "";
     width: 100%;
-    height: 8px;
+    height: calc(var(--string-height) * 1px);
     background: linear-gradient(#eee, #999);
     box-shadow: 76px 2px 8px rgb(54, 54, 54);
     z-index: 1;
     position: absolute;
-    top: 22px;
+    top: calc(var(--string-top-position) * 1px)
 }
 
 .note-fret {
@@ -58,4 +69,41 @@ justify-content: center;
     border-right: 12px solid;
     flex-grow: 0;
     border-image: linear gradient(to left, #bbb, #fff #bbb) 1 100%;
+}
+
+.note-fret:before{
+    content: 'C';
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    line-height: 33px;
+    text-align: center;
+    background: teal;
+    z-index: 2;
+    color: #eee;
+    opacity: 0;
+}
+
+.single-fretmark:after, .double-fretmark:before, .double-fretmark:after {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: rgb(136, 73, 73);
+}
+
+.single-fretmark:after{
+    top: calc(var(--fretboard-height) / 2 * 1px);
+    transform: translate(0, -50%);
+}
+
+.double-fretmark:before {
+    top: calc(var(--double-fretmark-position-1) * 1px);
+    transform: translate(-140%,80%);
+}
+
+.double-fretmark:after {
+    top: calc(var(--double-fretmark-position-2) * 1px);
+    transform: translate(-140%,90%);
 }
