@@ -72,7 +72,7 @@ justify-content: center;
 }
 
 .note-fret:before{
-    content: 'C';
+    content: attr(data-note);
     width: 33px;
     height: 33px;
     border-radius: 50%;
@@ -81,7 +81,7 @@ justify-content: center;
     background: teal;
     z-index: 2;
     color: #eee;
-    opacity: 0;
+    opacity: 1;
 }
 
 .single-fretmark:after, .double-fretmark:before, .double-fretmark:after {
