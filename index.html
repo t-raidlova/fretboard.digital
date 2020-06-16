@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interactive guitar fretboard</title>
+    <link rel="icon" type="image/png" href="assets/guitar.png">
+     <!-- ion icon -->
+
+     <script
+     type="module"
+     src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
+   ></script>
+   <script
+     nomodule=""
+     src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"
+   ></script>
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
@@ -23,39 +35,55 @@
                 </div>
         
                 <label for="number-of-frets">Number of frets</label>
-                <input type="number" id="number-of-frets" min="3" max="30" value="20">
+                <input type="range" id="number-of-frets" min="5" max="26" value="20">
         
                 
+            </div>
+
+            <!-- Settings Dropdown -->
+
+            <div class="options">
+                <li class="nav-item has-dropdown"><a href="#"><ion-icon name="settings-sharp"></ion-icon></a>
+                    <ul class="dropdown">
+                        <li class="drop-down-item">
+                            
+                        </li>
+                        <li class="drop-down-item">
+                            <label  for="show-all-notes">Show all notes</label>
+                            <input type="checkbox" id="show-all-notes">
+                        </li>
+
+                         <li class="drop-down-item">
+                             <label  for="show-multiple-notes">Show multiple notes</label>
+                            <input type="checkbox" id="show-multiple-notes">
+                        </li>
+                        
+                    </ul>
+                </li>
             </div>
 
             
             <!-- Dropdown -->
             
-            <li class="nav-item has-dropdown"><a href="#"></a>
+            <li class="nav-item has-dropdown"><a href="#"><ion-icon name="toggle-sharp"></ion-icon></a>
                 <ul class="dropdown">
                     <li class="dropdown-item"><a href="#" id="light">Light</a></li>
                     <li class="dropdown-item"><a href="#" id="dark">Dark</a></li>
                 </ul>
                 
             </li>
+
+
+
         </ul>
     </nav>
 
-    <!-- Freatboard -->
+    <!-- Fretboard -->
     
     <main>
         <div class="fretboard"></div>
         <div class="note-name-section"></div>     
     </main>
-
-    <div class="options">
-        <label for="show-all-notes">Show all notes</label>
-        <input type="checkbox" id="show-all-notes">
-
-        <label for="show-multiple-notes">Show multiple notes</label>
-        <input type="checkbox" id="show-multiple-notes">
-        
-    </div>
 
     <script src="app.js"></script>
 </body>

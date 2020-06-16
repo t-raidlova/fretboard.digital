@@ -82,32 +82,29 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* dont forget to set the hight.. or align items wont work */
     height: 100%;
 }
 
 main {
     text-align: center;
-    padding: 1rem 0 4rem 0;
+    /* padding: 0rem 0 4rem 0; */
 }
 
 .dropdown {
     position: absolute;
-    min-width: 100px;
-    opacity: 1;
-    background: var(--bg-dropdown);
+    /* width: 500px; */
+    opacity: 0;
     z-index: 2;
-    border-top:  5px solid var(--border-color);
-    box-shadow: rgba(2,8,20,0.1) 0px 0.175rem 0.5rem;
-    border-bottom-left-radius: 8px;
+    background: var(--bg-dropdown);
+    border-top: 2px solid var(--border-color);
+
     border-bottom-right-radius: 8px;
-    /* transform: translateX(30%); */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    border-bottom-left-radius: 8px;
     height: 3rem;
-    margin-right: 2rem;
-    padding: .5rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+    transform: translateX(-40%);
     transition: opacity .15s ease-out;
 }
 
@@ -125,6 +122,8 @@ main {
     font-weight: bold;
 }
 
+
+/* circles in themes*/
 .dropdown-item a::before {
     content: '';
     border: 2px solid var(--border-color);
@@ -134,7 +133,7 @@ main {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
-}
+} 
 
 /* fretboard */
 
@@ -145,12 +144,8 @@ main {
     height: 50%;
 }
 
-.accidental-selector {
-    margin-left: 30px;
-}
-
-label {
-    margin: 0 10px 0 20px;
+label, .accidental-selector {
+    margin: auto 10px auto 20px;
 }
 
 .fretboard {
@@ -252,4 +247,19 @@ label {
 
 .note-name-section span:hover {
     color: var(--blue);
+}
+
+ion-icon {
+    font-size: 26px;
+}
+
+#instrument-selector {
+    border-top: 2px solid var(--border-color);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 2.2rem;
+    padding: 0.5rem;
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
+    font-family: inherit;
+    font-weight: 700;
 }
