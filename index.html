@@ -1,42 +1,62 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive guitar fretboard</title>
-    <link rel="icon" href="./assets/guitar.png" type="image">
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="settings">
-        <label for="instrument-selector">Selected insrument</label>
-        <select name="instrument-selector" id="instrument-selector"></select>
+    <!-- Navigation & settings -->
+    <nav>
+        <ul class="nav-container">
+            <div class="settings">
+                <label for="instrument-selector">Selected insrument</label>
+                <select name="instrument-selector" id="instrument-selector"></select>
+                
+                <div class="accidental-selector">
+                    <input type="radio" class="acc-select" id="flats" name="accidentals" value="flats" checked>
+                    <label for="flats">♭</label>
+                    <input type="radio" class="acc-select" id="sharps" name="accidentals" value="sharps">
+                    <label for="flats">♯</label>
+                </div>
         
-        <div class="accidental-selector">
-            <input type="radio" class="acc-select" id="flats" name="accidentals" value="flats" checked>
-            <label for="flats">♭</label>
-            <input type="radio" class="acc-select" id="sharps" name="accidentals" value="sharps">
-            <label for="flats">♯</label>
-        </div>
+                <label for="number-of-frets">Number of frets</label>
+                <input type="number" id="number-of-frets" min="3" max="30" value="20">
+        
+                
+            </div>
 
-        <label for="number-of-frets">Number of frets</label>
-        <input type="number" id="number-of-frets" min="3" max="30" value="20">
+            
+            <!-- Dropdown -->
+            
+            <li class="nav-item has-dropdown"><a href="#"></a>
+                <ul class="dropdown">
+                    <li class="dropdown-item"><a href="#" id="light">Light</a></li>
+                    <li class="dropdown-item"><a href="#" id="dark">Dark</a></li>
+                </ul>
+                
+            </li>
+        </ul>
+    </nav>
 
+    <!-- Freatboard -->
+    
+    <main>
+        <div class="fretboard"></div>
+        <div class="note-name-section"></div>     
+    </main>
+
+    <div class="options">
         <label for="show-all-notes">Show all notes</label>
         <input type="checkbox" id="show-all-notes">
 
         <label for="show-multiple-notes">Show multiple notes</label>
         <input type="checkbox" id="show-multiple-notes">
-
+        
     </div>
 
-    
-    <div class="fretboard"></div>
-
-    <div class="note-name-section"></div>
-    
-
-<script src="app.js"></script>
-    
+    <script src="app.js"></script>
 </body>
 </html>
