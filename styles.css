@@ -31,7 +31,10 @@ body{
 
 .accidental-selector {
     margin-left: 30px;
+}
 
+label {
+    margin: 10px;
 }
 
 .fretboard {
