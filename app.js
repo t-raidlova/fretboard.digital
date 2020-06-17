@@ -1,24 +1,24 @@
-const darkButton = document.getElementById('dark');
-const lightButton = document.getElementById('light');
-const theme = localStorage.getItem('theme');
 
-//event handlers
+// ------------------- Theme switch ----------------------------------------
 
-darkButton.addEventListener('click', () => {
-document.body.classList.replace('light', 'dark');
-localStorage.setItem('theme', 'dark')
+var checkbox = document.querySelector('input[name=theme]');
+
+checkbox.addEventListener('change', function() {
+    if(this.checked) {
+        trans()
+        document.body.classList.replace('dark', 'light');
+    } else {
+        trans()
+        document.body.classList.replace('light', 'dark');
+    }
 })
 
-lightButton.addEventListener('click', () => {
-document.body.classList.replace('dark', 'light');
-localStorage.setItem('theme', 'light')
-})
-
-// apply the cached theme on reload 
-if (theme) {
-document.body.classList.add(theme);
+let trans = () => {
+    document.documentElement.classList.add('transition');
+    window.setTimeout(() => {
+        document.documentElement.classList.remove('transition')
+    }, 1000)
 }
-
 
 // ------------------------------- Freatboard ------------------------------------------------------
 

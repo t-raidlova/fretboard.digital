@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive guitar fretboard</title>
+    <title>Interactive fretboard</title>
     <link rel="icon" type="image/png" href="assets/guitar.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
@@ -13,72 +13,70 @@
 
     <script defer src="app.js"></script>
 </head>
-<body>
+<body class="dark">
+
     <!-- Navigation & settings -->
-    <nav>
-        <ul class="nav-container">
-            <div class="settings">
-                <label for="instrument-selector">Selected insrument</label>
-                <select name="instrument-selector" id="instrument-selector"></select>
-                
+
+        <nav>
+            <div class="nav-container">
+                <div class="instrument-selector">
+                    <label for="instrument-selector">SELECTED INSTRUMENT</label>
+                    <select name="instrument-selector" id="instrument-selector"></select>
+                </div>
+                    
                 <div class="accidental-selector">
                     <input type="radio" class="acc-select" id="flats" name="accidentals" value="flats" checked>
                     <label for="flats">♭</label>
                     <input type="radio" class="acc-select" id="sharps" name="accidentals" value="sharps">
                     <label for="flats">♯</label>
                 </div>
-        
-                <label for="number-of-frets">Number of frets</label>
-                <input type="range" id="number-of-frets" min="5" max="26" value="20">
-        
-                
-            </div>
 
-            <!-- Settings Dropdown -->
+                <div class="number-of-frets-selector">
+                    <label for="number-of-frets">NUMBER OF FRETS</label>
+                    <input type="range" id="number-of-frets" min="5" max="26" value="20">
+                </div>
 
-            <div class="options">
-                <li class="nav-item has-dropdown"><a href="#"><ion-icon name="settings-sharp"></ion-icon></a>
-                    <ul class="dropdown">
-                        <li class="drop-down-item">
-                            
-                        </li>
-                        <li class="drop-down-item">
-                            <label  for="show-all-notes">Show all notes</label>
-                            <input type="checkbox" id="show-all-notes">
-                        </li>
+                <!-- Settings Dropdown -->
 
-                         <li class="drop-down-item">
-                             <label  for="show-multiple-notes">Show multiple notes</label>
-                            <input type="checkbox" id="show-multiple-notes">
-                        </li>
-                        
-                    </ul>
-                </li>
-            </div>
-
-            
-            <!-- Dropdown -->
-            
-            <li class="nav-item has-dropdown"><a href="#"><ion-icon name="toggle-sharp"></ion-icon></a>
-                <ul class="dropdown">
-                    <li class="dropdown-item"><a href="#" id="light">Light</a></li>
-                    <li class="dropdown-item"><a href="#" id="dark">Dark</a></li>
-                </ul>
-                
-            </li>
-
-
-
-        </ul>
-    </nav>
-
-    <!-- Fretboard -->
+                <div class="settings">
+                    <ul>
+                        <li class="nav-item has-dropdown"><a href="#"><ion-icon name="settings-sharp"></ion-icon></a>
+                            <ul class="dropdown">
+                                <li class="drop-down-item">
+                                    
+                                </li>
+                                <li class="drop-down-item">
+                                    <input type="checkbox" id="show-all-notes">
+                                    <label  for="show-all-notes">Show all notes</label>
+                                </li>
     
-    <main>
-        <div class="fretboard"></div>
-        <div class="note-name-section"></div>     
-    </main>
+                                <li class="drop-down-item">
+                                    <input type="checkbox" id="show-multiple-notes">
+                                    <label  for="show-multiple-notes">Show multiple notes</label>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+    
+                    <!-- Theme switch -->
+    
+                    <div class="toggle-container">
+                        <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
+                    </div>
 
+
+                </div>
+                
+            </div>
+        </nav>
+
+        <!-- Fretboard -->
+        
+        <main>
+            <div class="fretboard"></div>
+            <div class="note-name-section"></div>     
+        </main>
     
 </body>
 </html>
