@@ -1,82 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive fretboard</title>
-    <link rel="icon" type="image/png" href="assets/guitar.png">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-    <!-- ion icon -->
-    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Interactive fretboard</title>
+		<link rel="icon" type="image/png" href="assets/guitar.png" />
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- ion icon -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule=""
+			src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"
+		></script>
 
-    <script defer src="app.js"></script>
-</head>
-<body class="dark">
+		<script defer src="app.js"></script>
+	</head>
+	<body class="dark">
+		<!-- Navigation & settings -->
 
-    <!-- Navigation & settings -->
+		<nav>
+			<div class="nav-container">
+				<div class="instrument-selector">
+					<label for="instrument-selector">SELECTED INSTRUMENT</label>
+					<select name="instrument-selector" id="instrument-selector"></select>
+				</div>
 
-        <nav>
-            <div class="nav-container">
-                <div class="instrument-selector">
-                    <label for="instrument-selector">SELECTED INSTRUMENT</label>
-                    <select name="instrument-selector" id="instrument-selector"></select>
-                </div>
-                    
-                <div class="accidental-selector">
-                    <input type="radio" class="acc-select" id="flats" name="accidentals" value="flats" checked>
-                    <label for="flats">♭</label>
-                    <input type="radio" class="acc-select" id="sharps" name="accidentals" value="sharps">
-                    <label for="flats">♯</label>
-                </div>
+				<div class="accidental-selector">
+					<input
+						type="radio"
+						class="acc-select"
+						id="flats"
+						name="accidentals"
+						value="flats"
+						checked
+					/>
+					<label for="flats">♭</label>
+					<input
+						type="radio"
+						class="acc-select"
+						id="sharps"
+						name="accidentals"
+						value="sharps"
+					/>
+					<label for="flats">♯</label>
+				</div>
 
-                <div class="number-of-frets-selector">
-                    <label for="number-of-frets">NUMBER OF FRETS</label>
-                    <input type="range" id="number-of-frets" min="5" max="26" value="20">
-                </div>
+				<div class="number-of-frets-selector">
+					<label for="number-of-frets">NUMBER OF FRETS</label>
+					<input
+						type="range"
+						id="number-of-frets"
+						min="5"
+						max="26"
+						value="20"
+					/>
+				</div>
 
-                <!-- Settings Dropdown -->
+				<!-- Settings Dropdown -->
 
-                <div class="settings">
-                    <ul>
-                        <li class="nav-item has-dropdown"><a href="#"><ion-icon name="settings-sharp"></ion-icon></a>
-                            <ul class="dropdown">
-                                <li class="drop-down-item">
-                                    
-                                </li>
-                                <li class="drop-down-item">
-                                    <input type="checkbox" id="show-all-notes">
-                                    <label  for="show-all-notes">Show all notes</label>
-                                </li>
-    
-                                <li class="drop-down-item">
-                                    <input type="checkbox" id="show-multiple-notes">
-                                    <label  for="show-multiple-notes">Show multiple notes</label>
-                                </li>
-                                
-                            </ul>
-                        </li>
-                    </ul>
-    
-                    <!-- Theme switch -->
-    
-                    <div class="toggle-container">
-                        <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle</label>
-                    </div>
+				<div class="settings">
+					<ul>
+						<li class="nav-item has-dropdown">
+							<a href="#"><ion-icon name="settings-sharp"></ion-icon></a>
+							<ul class="dropdown">
+								<li class="drop-down-item"></li>
+								<li class="drop-down-item">
+									<input type="checkbox" id="show-all-notes" />
+									<label for="show-all-notes">Show all notes</label>
+								</li>
 
+								<li class="drop-down-item">
+									<input type="checkbox" id="show-multiple-notes" />
+									<label for="show-multiple-notes">Show multiple notes</label>
+								</li>
+							</ul>
+						</li>
+					</ul>
 
-                </div>
-                
-            </div>
-        </nav>
+					<!-- Theme switch -->
 
-        <!-- Fretboard -->
-        
-        <main>
-            <div class="fretboard"></div>
-            <div class="note-name-section"></div>     
-        </main>
-    
-</body>
+					<div class="toggle-container">
+						<input type="checkbox" id="switch" name="theme" /><label
+							for="switch"
+							>Toggle</label
+						>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Fretboard -->
+
+		<main>
+			<div class="fretboard"></div>
+			<div class="note-name-section"></div>
+		</main>
+	</body>
 </html>
