@@ -1,27 +1,18 @@
-// ------------------- Theme switch ----------------------------------------
-
-var checkbox = document.querySelector('input[name=theme]');
-
-checkbox.addEventListener('change', function () {
-	if (this.checked) {
-		trans();
-		document.body.classList.replace('dark', 'light');
-	} else {
-		trans();
-		document.body.classList.replace('light', 'dark');
-	}
-});
-
-let trans = () => {
-	document.documentElement.classList.add('transition');
-	window.setTimeout(() => {
-		document.documentElement.classList.remove('transition');
-	}, 1000);
-};
-
-// ------------------------------- Freatboard -------------------------------
-
 (function () {
+	// ------------------- Theme switch ----------------------------------------
+
+	const checkbox = document.querySelector('input[name=theme]');
+
+	checkbox.addEventListener('change', function () {
+		if (this.checked) {
+			document.body.classList.replace('dark', 'light');
+		} else {
+			document.body.classList.replace('light', 'dark');
+		}
+	});
+
+	// ------------------------------- Freatboard -------------------------------
+
 	const root = document.documentElement;
 	const fretboard = document.querySelector('.fretboard');
 	const instrumentSelector = document.querySelector('#instrument-selector');
