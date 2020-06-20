@@ -25,9 +25,9 @@ body {
 	--color-headings: #0077ff;
 
 	/* fret */
-	--fretboard-height: 280;
+	--fretboard-height: 260;
 	--number-of-strings: 6;
-	--string-height: 8;
+	--string-height: 4;
 	--half-string-height: calc(var(--string-height) / 2);
 	--string-top-position: calc(
 		var(--fretboard-height) / var(--number-of-strings) / 2 -
@@ -86,7 +86,7 @@ nav {
 	position: fixed;
 	right: 0;
 	top: 0px;
-	/* z-index: 50; */
+	z-index: 50;
 }
 
 .nav-container {
@@ -225,10 +225,10 @@ label,
 .double-fretmark:after {
 	content: '';
 	position: absolute;
-	height: 20px;
-	width: 20px;
+	height: 18px;
+	width: 18px;
 	border-radius: 50%;
-	background: rgb(136, 73, 73);
+	background: var(--gray1);
 }
 
 .single-fretmark:after {
@@ -238,12 +238,12 @@ label,
 
 .double-fretmark:before {
 	top: calc(var(--double-fretmark-position-1) * 1px);
-	transform: translate(-140%, 80%);
+	transform: translate(-140%, -50%);
 }
 
 .double-fretmark:after {
 	top: calc(var(--double-fretmark-position-2) * 1px);
-	transform: translate(-140%, 90%);
+	transform: translate(-140%, -50%);
 }
 
 .note-name-section {
@@ -336,4 +336,5 @@ footer {
 	bottom: 0px;
 	width: 100%;
 	text-align: center;
+	z-index: 50;
 }
