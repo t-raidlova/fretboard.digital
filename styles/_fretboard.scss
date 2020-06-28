@@ -1,0 +1,106 @@
+.fretboard {
+	display: flex;
+	flex-direction: column;
+	background: #333;
+	min-width: 1200px;
+	height: calc(var(--fretboard-height) * 1px);
+	margin-top: 150px;
+}
+
+.string {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	position: relative;
+}
+
+.string:before {
+	content: '';
+	width: 100%;
+	height: calc(var(--string-height) * 1px);
+	background: linear-gradient(#eee, #999);
+	box-shadow: 76px 2px 8px rgb(54, 54, 54);
+	z-index: 1;
+	position: absolute;
+	top: calc(var(--string-top-position) * 1px);
+}
+
+.note-fret {
+	display: flex;
+	flex: 1;
+	border-right: 8px solid;
+	border-image: linear-gradient(to left, #777, #bbb, #777) 1 100%;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.note-fret:first-child {
+	background: #4d4d4d;
+	min-width: 76px;
+	border-right: 10px solid;
+	flex-grow: 0;
+	border-image: linear gradient(to left, #bbb, #fff #bbb) 1 100%;
+}
+
+.note-fret:before {
+	content: attr(data-note);
+	width: 33px;
+	height: 33px;
+	border-radius: 50%;
+	line-height: 33px;
+	text-align: center;
+	background: var(--blue);
+	z-index: 2;
+	color: #eee;
+	opacity: var(--noteDotOpacity);
+}
+
+.single-fretmark:after,
+.double-fretmark:before,
+.double-fretmark:after {
+	content: '';
+	position: absolute;
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	background: var(--gray1);
+}
+
+.single-fretmark:after {
+	top: calc(var(--fretboard-height) / 2 * 1px);
+	transform: translate(0, -50%);
+}
+
+.double-fretmark:before {
+	top: calc(var(--double-fretmark-position-1) * 1px);
+	transform: translate(-140%, -50%);
+}
+
+.double-fretmark:after {
+	top: calc(var(--double-fretmark-position-2) * 1px);
+	transform: translate(-140%, -50%);
+}
+
+main {
+	text-align: center;
+	/* padding: 0rem 0 4rem 0; */
+}
+
+.note-name-section {
+	width: 100%;
+	color: var(--text);
+	font-weight: 100;
+	font-size: 2.5rem;
+	display: flex;
+	justify-content: center;
+}
+
+.note-name-section span {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.note-name-section span:hover {
+	color: var(--blue);
+}

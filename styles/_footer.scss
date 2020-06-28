@@ -1,0 +1,13 @@
+footer {
+	padding: 0.9rem 2rem;
+	background: var(--bg-nav);
+	color: var(--text);
+	font-size: 0.8rem;
+	font-family: inherit;
+	position: fixed;
+	right: 0;
+	bottom: 0px;
+	width: 100%;
+	text-align: center;
+	z-index: 50;
+}

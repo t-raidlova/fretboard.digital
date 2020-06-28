@@ -1,0 +1,68 @@
+@import 'nav';
+@import 'theme-toggle';
+@import 'fretboard';
+@import 'footer';
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+	color: var(--text);
+	background: var(--bg);
+	transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+	height: 100%;
+}
+
+:root {
+	/* theme colors */
+	--gray0: #f8f8f8;
+	--gray1: #dbe1e8;
+	--gray2: #b2becd;
+	--gray3: #6c7983;
+	--gray4: #454e56;
+	--gray5: #2a2e35;
+	--gray6: #12181b;
+	--blue: #0084a5;
+	--purple: #a82dd1;
+	--yellow: #fff565;
+
+	--color-headings: #0077ff;
+
+	/* fretboard */
+	--fretboard-height: 260;
+	--number-of-strings: 6;
+	--string-height: 4;
+	--half-string-height: calc(var(--string-height) / 2);
+	--string-top-position: calc(
+		var(--fretboard-height) / var(--number-of-strings) / 2 -
+			var(--half-string-height)
+	);
+	--double-fretmark-position-1: calc(var(--fretboard-height) * 0.25);
+	--double-fretmark-position-2: calc(var(--fretboard-height) * 0.75);
+	--noteDotOpacity: 0;
+}
+
+.light {
+	--bg: var(--gray0);
+	--bg-nav: linear-gradient(to right, var(--gray1), var(--gray3));
+	--bg-dropdown: var(--gray0);
+	--text: var(--gray6);
+	--border-color: var(--blue);
+}
+
+.dark {
+	--bg: var(--gray5);
+	--bg-nav: linear-gradient(to right, var(--gray5), var(--gray6));
+	--bg-dropdown: var(--gray6);
+	--text: var(--gray0);
+	--border-color: var(--purple);
+}
+
+#dark::before {
+	background: #2a2e35;
+}
+
+#light::before {
+	background: #f0f0f0;
+}
