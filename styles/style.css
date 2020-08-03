@@ -242,7 +242,9 @@ svg {
   border-radius: 50%;
   line-height: 33px;
   text-align: center;
-  background: var(--blue);
+  background: var(--purple);
+  -webkit-filter: drop-shadow(8px 7px 0.7rem #161616);
+          filter: drop-shadow(8px 7px 0.7rem #161616);
   z-index: 2;
   color: #eee;
   opacity: var(--noteDotOpacity);
@@ -301,7 +303,7 @@ main {
 }
 
 .note-name-section span:hover {
-  color: var(--blue);
+  color: var(--purple);
 }
 
 footer {
@@ -341,7 +343,7 @@ body {
   --gray5: #2a2e35;
   --gray6: #12181b;
   --blue: #0084a5;
-  --purple: #a82dd1;
+  --purple: #642cddb3;
   --yellow: #fff565;
   --color-headings: #0077ff;
   /* fretboard */

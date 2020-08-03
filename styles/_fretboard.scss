@@ -50,7 +50,8 @@
 	border-radius: 50%;
 	line-height: 33px;
 	text-align: center;
-	background: var(--blue);
+	background: var(--purple);
+	filter: drop-shadow(8px 7px 0.7rem rgb(22, 22, 22));
 	z-index: 2;
 	color: #eee;
 	opacity: var(--noteDotOpacity);
@@ -102,5 +103,5 @@ main {
 }
 
 .note-name-section span:hover {
-	color: var(--blue);
+	color: var(--purple);
 }
