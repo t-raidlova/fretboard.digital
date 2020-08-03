@@ -11,22 +11,16 @@ nav {
 	right: 0;
 	top: 0px;
 	z-index: 50;
-}
-
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-a {
-	/* inherits from nearest parent */
-	color: currentColor;
-	text-decoration: none;
-}
-
-ion-icon {
-	font-size: 26px;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		/* inherits from nearest parent */
+		color: currentColor;
+		text-decoration: none;
+	}
 }
 
 .nav-container {
@@ -78,6 +72,11 @@ label,
 	box-shadow: rgba(2, 8, 20, 0.1) 0px 0.175em 0.5em;
 	transform: translateX(-40%);
 	transition: opacity 0.15s ease-out;
+}
+
+svg {
+	fill: var(--text);
+	width: 25px;
 }
 
 .has-dropdown:focus-within .dropdown {
