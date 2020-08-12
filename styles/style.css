@@ -154,10 +154,6 @@ svg {
   transition: 0.3s;
 }
 
-.toggle-container input:checked + label {
-  background: var(--blue);
-}
-
 .toggle-container input:checked + label:after {
   left: calc(100% - 5px);
   -webkit-transform: translateX(-100%);
@@ -242,7 +238,7 @@ svg {
   border-radius: 50%;
   line-height: 33px;
   text-align: center;
-  background: var(--purple);
+  background: var(--color-headings);
   -webkit-filter: drop-shadow(8px 7px 0.7rem #161616);
           filter: drop-shadow(8px 7px 0.7rem #161616);
   z-index: 2;
@@ -295,6 +291,7 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 2rem;
 }
 
 .note-name-section span {
@@ -303,7 +300,7 @@ main {
 }
 
 .note-name-section span:hover {
-  color: var(--purple);
+  color: var(--color-headings);
 }
 
 footer {
@@ -342,9 +339,6 @@ body {
   --gray4: #454e56;
   --gray5: #2a2e35;
   --gray6: #12181b;
-  --blue: #0084a5;
-  --purple: #642cddb3;
-  --yellow: #fff565;
   --color-headings: #0077ff;
   /* fretboard */
   --fretboard-height: 260;
@@ -373,7 +367,7 @@ body {
   --bg-nav: linear-gradient(to right, var(--gray5), var(--gray6));
   --bg-dropdown: var(--gray6);
   --text: var(--gray0);
-  --border-color: var(--purple);
+  --border-color: var(--color-headings);
 }
 
 #dark::before {

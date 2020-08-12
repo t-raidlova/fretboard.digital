@@ -50,7 +50,7 @@
 	border-radius: 50%;
 	line-height: 33px;
 	text-align: center;
-	background: var(--purple);
+	background: var(--color-headings);
 	filter: drop-shadow(8px 7px 0.7rem rgb(22, 22, 22));
 	z-index: 2;
 	color: #eee;
@@ -95,6 +95,7 @@ main {
 	font-size: 2.5rem;
 	display: flex;
 	justify-content: center;
+	margin-top: 2rem;
 }
 
 .note-name-section span {
@@ -103,5 +104,5 @@ main {
 }
 
 .note-name-section span:hover {
-	color: var(--purple);
+	color: var(--color-headings);
 }

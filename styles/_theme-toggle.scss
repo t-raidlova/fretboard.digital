@@ -28,10 +28,6 @@
 	transition: 0.3s;
 }
 
-.toggle-container input:checked + label {
-	background: var(--blue);
-}
-
 .toggle-container input:checked + label:after {
 	left: calc(100% - 5px);
 	-webkit-transform: translateX(-100%);

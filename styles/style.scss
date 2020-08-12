@@ -23,10 +23,6 @@ body {
 	--gray4: #454e56;
 	--gray5: #2a2e35;
 	--gray6: #12181b;
-	--blue: #0084a5;
-	--purple: #642cddb3;
-	--yellow: #fff565;
-
 	--color-headings: #0077ff;
 
 	/* fretboard */
@@ -56,7 +52,7 @@ body {
 	--bg-nav: linear-gradient(to right, var(--gray5), var(--gray6));
 	--bg-dropdown: var(--gray6);
 	--text: var(--gray0);
-	--border-color: var(--purple);
+	--border-color: var(--color-headings);
 }
 
 #dark::before {
