@@ -1,5 +1,5 @@
 (function () {
-	// ------------------- Theme switch ----------------------------------------
+	// Theme switch
 
 	const checkbox = document.querySelector('input[name=theme]');
 
@@ -11,7 +11,7 @@
 		}
 	});
 
-	// ------------------------------- Freatboard -------------------------------
+	// Freatboard
 
 	const root = document.documentElement;
 	const fretboard = document.querySelector('.fretboard');
@@ -101,6 +101,8 @@
 					noteFret.setAttribute('data-note', noteName);
 
 					// Add single fret marks
+					// i === 0 --> only the first string
+					// indexOf(fret) !== -1 --> fret number exists in singleFretMark array
 					if (i === 0 && singleFretMarkPositions.indexOf(fret) !== -1) {
 						noteFret.classList.add('single-fretmark');
 					}
@@ -155,7 +157,6 @@
 
 	const handlers = {
 		showNoteDot(event) {
-			// Check if show all notes is selected
 			if (showAllNotes) {
 				return;
 			}
