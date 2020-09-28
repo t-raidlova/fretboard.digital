@@ -77,7 +77,10 @@
 		},
 		setupFretboard() {
 			fretboard.innerHTML = '';
+			
+			//updating css variables
 			root.style.setProperty('--number-of-strings', numberOfStrings);
+			
 			// Add strings to fretboard
 			for (let i = 0; i < numberOfStrings; i++) {
 				let string = tools.createElement('div');
@@ -89,7 +92,8 @@
 					let noteFret = tools.createElement('div');
 					noteFret.classList.add('note-fret');
 					string.appendChild(noteFret);
-
+					
+					//adding note names to fretboard, using the iterated fret and index of tuning as note index
 					let noteName = this.generateNoteNames(
 						fret + instrumentTuningPresets[selectedInstrument][i],
 						accidentals
@@ -100,7 +104,8 @@
 					if (i === 0 && singleFretMarkPositions.indexOf(fret) !== -1) {
 						noteFret.classList.add('single-fretmark');
 					}
-
+					
+					// Add double fretmarks
 					if (i === 0 && doubleFretMarkPositions.indexOf(fret) !== -1) {
 						let doubleFretMark = tools.createElement('div');
 						doubleFretMark.classList.add('double-fretmark');
@@ -234,6 +239,7 @@
 	const tools = {
 		createElement(element, content) {
 			element = document.createElement(element);
+			// if content exists, set it as inner html
 			if (arguments.length > 1) {
 				element.innerHTML = content;
 			}
